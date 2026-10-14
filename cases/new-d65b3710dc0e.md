@@ -1,0 +1,33 @@
+---
+id: new-d65b3710dc0e
+title: "双编排方案：30 秒 F1 维修站动画"
+model: "GPT-6.1 Sol"
+author: "Rubens Soto | AI & SaaS @rubenssoto_ai"
+source: "https://x.com/rubenssoto_ai/status/2108289170871582851"
+published_at: "2026-10-08T20:11:23+00:00"
+contentLicense: CC-BY-NC-4.0
+---
+
+# 双编排方案：30 秒 F1 维修站动画
+
+- **模型**：GPT-6.1 Sol
+- **作者**：Rubens Soto | AI & SaaS @rubenssoto_ai
+- **原帖**：https://x.com/rubenssoto_ai/status/2108289170871582851
+- **分类**：3D、动画
+- **code2 标签**：code23d, code2audio, code2video
+- **许可**：CC-BY-NC-4.0（默认许可：署名-非商业使用（CC BY-NC 4.0）。本条内容为第三方原作者作品，若原作者另有明确声明，以原作者声明为准。如需下架请提 Issue，即刻移除。）
+
+## Prompt
+
+```
+a 30s cinematic F1 pit stop in Three.js. Detailed car, 8-person crew changing all 4 tyres, synthesized audio, fully procedural.
+```
+
+## 相关链接
+
+- https://pbs.twimg.com/amplify_video_thumb/2108288428466995200/img/Yd4BxzX279Y2LvVt.jpg
+- https://video.twimg.com/amplify_video/2108288428466995200/vid/avc1/1920x1728/N5teBFnjzdtlO_vf.mp4?tag=29
+
+## 原始媒体（指向原作者 CDN，不在本仓库托管）
+
+- https://pbs.twimg.com/amplify_video_thumb/2108288428466995200/img/Yd4BxzX279Y2LvVt.jpg

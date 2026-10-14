@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/code-everything/code-everything/blob/main/schemas/case.schema.json",
+  "title": "code-everything 主案例库条目",
+  "description": "data/cases.jsonl 中每一行（一个 JSON 对象）必须满足的字段规范。原始字段忠实保留自 Frontier 数据源；license / licenseNote / attribution 为导出管线追加的合规字段。",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "modelId",
+    "modelLabel",
+    "author",
+    "promptStatus",
+    "categories",
+    "code2Tags",
+    "contentLicense",
+    "licenseNote",
+    "attribution"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "案例唯一标识，如 case-001 / new-xxxx / b24-astra-xxxx"
+    },
+    "number": { "type": ["integer", "null"], "description": "主表序号（合集条目可能为空）" },
+    "title": { "type": "string", "minLength": 1 },
+    "originalTitle": { "type": ["string", "null"], "description": "原帖标题（未改写）" },
+    "modelId": { "type": "string", "minLength": 1 },
+    "modelLabel": { "type": "string", "minLength": 1 },
+    "author": { "type": "string", "minLength": 1, "description": "原作者署名，格式通常为「昵称 @handle」" },
+    "xUrl": {
+      "type": ["string", "null"],
+      "pattern": "^https://(x\\.com|twitter\\.com)/",
+      "description": "原帖链接（X / Twitter）"
+    },
+    "links": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "description": "与原帖相关的全部链接（原帖、Demo、附件等）"
+    },
+    "prompt": { "type": ["string", "null"], "description": "原始 Prompt 全文，忠实保留、不改写" },
+    "promptHash": { "type": ["string", "null"] },
+    "promptStatus": {
+      "type": "string",
+      "enum": ["full", "original", "transcribed", "thread", "context", "repository", "demo", "partial", "unavailable"],
+      "description": "Prompt 可得性：full=完整原文；original=原帖全文即 prompt；transcribed=从视频/音频转写；thread=散落在原帖回复串；context=仅有上下文描述；repository=存放在第三方仓库；demo=仅有演示无文字；partial=节选；unavailable=不可得"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "内容分类：游戏/网页/前端/3D/动画/生成艺术/可视化/工具/效率工作"
+    },
+    "primaryCategory": { "type": ["string", "null"] },
+    "code2Tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^code2[a-z0-9]+$"
+      },
+      "description": "产出域标签（自动推断），如 code23d / code2game / code2video"
+    },
+    "code2Signals": { "type": ["object", "null"], "description": "code2 标签命中的关键词证据" },
+    "demoUrl": { "type": ["string", "null"], "format": "uri", "description": "可交互 Demo 链接" },
+    "image": { "type": ["string", "null"], "description": "预览图（站点本地路径，仓库不托管二进制）" },
+    "video": { "type": ["string", "null"], "description": "预览视频（站点本地路径，仓库不托管二进制）" },
+    "mediaSources": {
+      "type": ["array", "null"],
+      "items": { "type": "string", "format": "uri" },
+      "description": "原始媒体 URL（指向原作者 CDN）"
+    },
+    "collection": { "type": ["boolean", "string", "null"], "description": "是否属于某个合集" },
+    "collectionIndex": { "type": ["integer", "null"] },
+    "publishedAt": { "type": ["string", "null"], "description": "原帖发布时间（ISO 8601）" },
+    "addedAt": { "type": ["string", "null"], "description": "收录时间（ISO 8601）" },
+    "note": { "type": ["string", "null"], "description": "整理者备注" },
+    "evidence": { "type": ["string", "null"], "description": "原帖说明文字（不参与 code2 标签判定）" },
+    "relatedCaseIds": { "type": ["array", "null"], "items": { "type": "string" } },
+    "failed": { "type": ["boolean", "null"], "description": "原帖是否自述失败/翻车案例" },
+    "contentLicense": {
+      "type": "string",
+      "description": "本仓库对收录内容的默认许可姿态：CC-BY-NC-4.0；原作者有明确声明时以原作者声明为准"
+    },
+    "licenseNote": { "type": "string" },
+    "attribution": {
+      "type": "object",
+      "required": ["creator", "sourceUrl"],
+      "properties": {
+        "creator": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "type": ["string", "null"], "format": "uri" }
+      },
+      "description": "署名信息：原作者 + 原帖链接，逐条保留，不可移除"
+    }
+  },
+  "additionalProperties": true
+}

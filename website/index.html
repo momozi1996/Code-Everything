@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111112">
+  <meta name="description" content="来自 X 的 Claude Opus、Sonnet、Haiku、Fable 5.5、GPT-6 / 6.1 与 Gemini 4 提示词和作品案例。浏览游戏、网站、3D、动画和效率工作，查看原始来源，一键复制原始 Prompt。">
+  <title>Frontier — 多模型 Prompt & Case Library</title>
+  <!-- StepPage serves assets with `immutable` caching for a year, so every
+       entry reference uses a content hash. scripts/stamp_assets.py updates it. -->
+  <link rel="icon" href="assets/favicon.svg?v=8bf4f7446af4" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=79278d005c10">
+  <script defer src="data/catalog.js?v=8516baa6a5e0"></script>
+  <script defer src="app.js?v=b4f93cf35bc3"></script>
+</head>
+<body>
+  <a class="skip-link" href="#library">跳到案例库</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Frontier Prompt Library 首页"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="brandGradient" x2="1" y2="1"><stop stop-color="#f5b5be"></stop><stop offset="1" stop-color="#b2a0ff"></stop></linearGradient></defs><path d="M18 3v30M3 18h30M7.4 7.4l21.2 21.2M7.4 28.6L28.6 7.4M4.1 12.3l27.8 11.4M12.3 4.1l11.4 27.8M4.1 23.7l27.8-11.4M12.3 31.9L23.7 4.1" stroke="url(#brandGradient)" stroke-width="3.2"></path></svg><span>frontier<span class="brand-version"> / </span></span><span class="brand-caption">PROMPT LIBRARY</span></a>
+    <nav class="header-nav" aria-label="主导航"><a href="#library">探索案例</a><a href="code2video.html">Code2Video</a><a href="github-projects.html">GitHub 项目</a><a href="goodcase.html">GoodCase 广场</a><a href="opus-video-prompts.html">向阳乔木合集</a><a href="astra-prompts.html">Astra 提示词</a><a href="game-prompts.html">手游提示词</a><a href="problems.html">世界难题集</a><button data-action="guide">如何使用</button></nav>
+    <button class="saved-nav" id="saved-nav" aria-label="查看收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h12v17l-6-4-6 4z"></path></svg><span>我的收藏</span><b id="saved-count">0</b></button>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-kicker"><span class="live-dot"></span> COLLECTED FROM X. READY TO CREATE.</div>
+      <h1 id="hero-title">让好作品，<br><span class="hero-second">从一句 <span class="gradient-word">Prompt</span> 开始。</span></h1>
+      <p class="hero-description">收集 Claude × GPT × Gemini 的作品案例与原始提示词。<br class="mobile-break">找到灵感，复制指令，开始你的下一次创作。</p>
+      <div class="hero-actions"><a class="button button-light" href="#library">探索提示词 <span aria-hidden="true">↗</span></a><button class="button button-quiet" id="random-button">给我一点灵感 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h3c4 0 5 10 9 10h4m-4-4 4 4-4 4M4 17h3c1 0 2-1 3-3m4-4 2-3h4m-4-4 4 4-4 4"></path></svg></button></div>
+      <div class="hero-meta" id="hero-meta"><span>正在载入案例资料…</span></div>
+    </section>
+    <a class="world-problem-portal" href="problems.html" aria-label="打开千禧年与世界难题集"><span class="world-portal-mark" aria-hidden="true">∴</span><div><span class="eyebrow">NEW COLLECTION / 题目与研究指令</span><h2>千禧年 / 世界难题集</h2><p>跨学科开放题目 · 一键复制 Prompt + 完整原始题目</p></div><span class="world-portal-arrow" aria-hidden="true">↗</span></a>
+    <div class="collection-portals"><a href="code2video.html"><span>COLLECTION 03 / 仓库导入</span><h2>Code2Video 提示词合集 ↗</h2><p>282 个来源结果 · 原样 Prompt · 分类与出处 · 独立于已核验案例库</p></a><a href="github-projects.html"><span>COLLECTION 04 / 完整项目</span><h2>完整 GitHub 代码仓库 ↗</h2><p>Sakura Crossing · Tidewater · 源码快照、预览与启动说明</p></a><a href="goodcase.html"><span>COLLECTION 05 / Prompt 广场</span><h2>GoodCase Prompt 广场 ↗</h2><p>5 条 Opus 5.5 / GPT-6 Astra · 完整 Prompt 原样收录</p></a><a href="opus-video-prompts.html"><span>COLLECTION 06 / 视频提示词</span><h2>向阳乔木 · Opus 5.5 视频合集 ↗</h2><p>18 条可复制提示词原文 · 54 条案例总览 · 第三方整理</p></a><a href="astra-prompts.html"><span>COLLECTION 07 / Astra 清单</span><h2>GPT-6 Astra 提示词清单 ↗</h2><p>105 条 · 技术栈与维度 · 逐条标注逐字原文或改写版</p></a><a href="game-prompts.html"><span>COLLECTION 08 / 手游反推</span><h2>手游反推提示词 Top 200 ↗</h2><p>162 个商店榜手游 · 反推提示词全文 · 榜单与评分</p></a></div>
+    <section id="library" class="library" aria-labelledby="library-title">
+      <div class="library-heading"><div><span class="eyebrow">THE COLLECTION</span><h2 id="library-title">灵感，值得被复现。</h2></div><button class="text-button data-info" data-action="guide"><span class="tiny-dot"></span> 来源与收录说明 <span aria-hidden="true">↗</span></button></div>
+      <div class="filter-bar" id="filter-bar">
+        <div class="filter-top"><label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="search" type="search" placeholder="搜索案例、作者或提示词…" autocomplete="off" aria-label="搜索案例、作者或提示词"><kbd>/</kbd></label>
+          <div class="filter-selects"><label class="select-wrap"><span>范围</span><select id="scope" aria-label="来源范围"><option value="prompt">有 Prompt 的案例</option><option value="all">全部案例</option><option value="independent">排除100项合辑 · 有 Prompt</option><option value="collection">100 HTML 合辑</option><option value="demo">仅演示 · 无 Prompt</option><option value="experience">有体验地址</option></select></label><label class="select-wrap"><span>排序</span><select id="sort" aria-label="排序"><option value="featured">精选优先</option><option value="newest">来源日期 · 最新</option><option value="oldest">来源日期 · 最早</option><option value="number">文档顺序</option></select></label></div>
+        </div>
+        <div class="model-row"><span class="model-row-label">模型</span><div id="model-filters" class="model-filters" role="group" aria-label="模型筛选"></div><span class="model-rule">按作品使用模型归类 · 不把对手名称当标签</span></div>
+        <div class="category-row"><div class="categories" id="categories" role="group" aria-label="案例分类"></div><button class="icon-button density-button" id="density-button" aria-label="切换紧凑布局" title="切换紧凑布局"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></button></div>
+      </div>
+      <div class="results-bar"><p id="result-count" aria-live="polite"></p><div><span id="selection-label"></span><button id="clear-filters" hidden>清除筛选 ×</button></div></div>
+      <div class="case-grid" id="case-grid"></div>
+      <div id="empty-state" class="empty-state" hidden><div class="empty-orbit" aria-hidden="true">∅</div><h3>这里还没有匹配的灵感</h3><p>试试更短的关键词，或切换分类与来源范围。</p><button class="button button-light" id="empty-reset">查看全部提示词</button></div>
+      <div class="load-more-area"><button id="load-more" class="button button-outline">再探索一些 <span aria-hidden="true">↓</span></button><p id="load-progress"></p></div>
+    </section>
+    <section class="closing"><div><span class="eyebrow">GOOD INPUT. YOUR NEXT OUTPUT.</span><h2>不止收藏灵感。<br><span>把它变成你的作品。</span></h2></div><div class="closing-right"><p>每一个 Prompt 都保留原文与出处。<br>带走指令，也别忘记参考素材和运行条件。</p><a href="data/catalog.json?v=ff99773f319c" download="opus55-cases.json" class="button button-outline">下载案例数据 <span aria-hidden="true">↓</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-brand">frontier <span>CLAUDE × GPT × GEMINI CASE ARCHIVE</span></div><p id="sync-footer"></p><button data-action="guide">数据与版权说明 ↗</button></footer>
+  <dialog id="case-dialog" class="case-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="dialog-eyebrow">CASE EXPLORER</span><div class="dialog-nav"><button id="prev-case" class="icon-button" aria-label="上一个案例">←</button><button id="next-case" class="icon-button" aria-label="下一个案例">→</button><button class="icon-button dialog-close" aria-label="关闭">×</button></div></div><div id="dialog-body"></div></dialog>
+  <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title"><button class="icon-button guide-close" aria-label="关闭">×</button><span class="eyebrow">A NOTE ON THE LIBRARY</span><h2 id="guide-title">好灵感，也要有出处。</h2><div id="guide-body"></div><button class="button button-light guide-close">开始探索 →</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">此案例库需要启用 JavaScript。你仍可以打开 data/catalog.json 查看原始案例数据。</p></noscript>
+</body>
+</html>

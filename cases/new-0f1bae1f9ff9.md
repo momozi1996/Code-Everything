@@ -1,0 +1,33 @@
+---
+id: new-0f1bae1f9ff9
+title: "太空列车：Astra 在风暴上方建轨道"
+model: "GPT-6 Astra"
+author: "Tony @EnvolDev"
+source: "https://x.com/EnvolDev/status/2110068299430051975"
+published_at: "2026-10-13T18:01:00+00:00"
+contentLicense: CC-BY-NC-4.0
+---
+
+# 太空列车：Astra 在风暴上方建轨道
+
+- **模型**：GPT-6 Astra
+- **作者**：Tony @EnvolDev
+- **原帖**：https://x.com/EnvolDev/status/2110068299430051975
+- **分类**：3D、可视化
+- **code2 标签**：code23d, code2viz
+- **许可**：CC-BY-NC-4.0（默认许可：署名-非商业使用（CC BY-NC 4.0）。本条内容为第三方原作者作品，若原作者另有明确声明，以原作者声明为准。如需下架请提 Issue，即刻移除。）
+
+> 本案例暂无原始 Prompt（原帖未公开或仅有演示）。
+
+## 相关链接
+
+- https://pbs.twimg.com/amplify_video_thumb/2110030758618468352/img/xvLCtLAJUpXHUjqI.jpg
+- https://video.twimg.com/amplify_video/2110030758618468352/vid/avc1/2880x2880/s5eJdg1FLuvBsgYG.mp4?tag=29
+
+## 原始媒体（指向原作者 CDN，不在本仓库托管）
+
+- https://pbs.twimg.com/amplify_video_thumb/2110030758618468352/img/xvLCtLAJUpXHUjqI.jpg
+
+## 备注
+
+未取得当前作品完整逐字 Prompt；保留演示与来源，不反推输入。

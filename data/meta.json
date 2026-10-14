@@ -1,0 +1,80 @@
+{
+  "generatedBy": "scripts/export_from_site.py",
+  "sourceNote": "上游数据源为维护者私有整理文档，不公开；公开内容均来自原作者在 X 等平台的公开发布",
+  "collections": [
+    {
+      "name": "cases",
+      "title": "Frontier Prompt & Case Library",
+      "file": "data/cases.jsonl",
+      "count": 739,
+      "withPrompt": 305,
+      "syncedAt": "2026-10-14T14:28+08:00",
+      "source": null
+    },
+    {
+      "name": "code2video",
+      "title": "Code2Video 合集",
+      "file": "data/code2video.jsonl",
+      "count": 282,
+      "withPrompt": 282,
+      "syncedAt": "2026-09-28T11:21+08:00",
+      "source": "https://github.com/yihui-dev/awesome-opus5-5-videos"
+    },
+    {
+      "name": "github-projects",
+      "title": "完整 GitHub 项目",
+      "file": "data/github-projects.jsonl",
+      "count": 11,
+      "withPrompt": 0,
+      "syncedAt": "2026-09-28T11:21+08:00",
+      "source": null
+    },
+    {
+      "name": "goodcase",
+      "title": "GoodCase Prompt 广场 · Opus/GPT-6 案例",
+      "file": "data/goodcase.jsonl",
+      "count": 45,
+      "withPrompt": 45,
+      "syncedAt": "2026-09-28T12:03+0800",
+      "source": "https://goodcase.ai/cases?sort=latest"
+    },
+    {
+      "name": "opus-video-prompts",
+      "title": "向阳乔木 · Opus 5.5 视频提示词合集",
+      "file": "data/opus-video-prompts.jsonl",
+      "count": 72,
+      "withPrompt": 18,
+      "syncedAt": null,
+      "source": null
+    },
+    {
+      "name": "astra-prompts",
+      "title": "GPT-6 Astra 提示词清单（105 条）",
+      "file": "data/astra-prompts.jsonl",
+      "count": 105,
+      "withPrompt": 105,
+      "syncedAt": null,
+      "source": null
+    },
+    {
+      "name": "game-prompts",
+      "title": "手游反推提示词 · Game Prompts Top 200",
+      "file": "data/game-prompts.jsonl",
+      "count": 162,
+      "withPrompt": 162,
+      "syncedAt": null,
+      "source": null
+    },
+    {
+      "name": "world-problems",
+      "title": "千禧年 / 世界难题集",
+      "file": "data/world-problems.jsonl",
+      "count": 118,
+      "withPrompt": 118,
+      "syncedAt": "2026-10-14T13:29+08:00",
+      "source": null
+    }
+  ],
+  "totalItems": 1534,
+  "totalPrompts": 1035
+}

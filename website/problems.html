@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111112">
+  <meta name="description" content="千禧年与世界难题卡片集。按数学、物理、医学等学科探索，复制原表中的 Prompt 与完整原始题目，查看来源、评测与 GT 条件。">
+  <title>千禧年 / 世界难题集 — Frontier</title>
+  <link rel="icon" href="assets/favicon.svg?v=8bf4f7446af4" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=79278d005c10"><link rel="stylesheet" href="assets/vendor/katex/katex.min.css?v=19095127357e"><link rel="stylesheet" href="problems.css?v=25e66a09a2ab">
+  <script defer src="assets/vendor/katex/katex.min.js?v=e8d885505949"></script><script defer src="data/problems.js?v=d4c7151f7815"></script><script defer src="problems.js?v=643a7c816bf0"></script>
+</head>
+<body class="problems-page">
+  <a class="skip-link" href="#problem-library">跳到题目</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="返回 Frontier 案例库"><span class="problem-brand-symbol" aria-hidden="true">✳</span><span>frontier<span class="brand-version"> / </span></span><span class="brand-caption">PROMPT LIBRARY</span></a>
+    <nav class="problem-header-nav" aria-label="模块导航"><a href="index.html#library">模型案例库</a><a href="code2video.html">Code2Video</a><a href="github-projects.html">GitHub 项目</a><a href="goodcase.html">GoodCase 广场</a><a href="opus-video-prompts.html">向阳乔木合集</a><a href="astra-prompts.html">Astra 提示词</a><a href="game-prompts.html">手游提示词</a><a class="active" href="problems.html" aria-current="page">世界难题集</a></nav>
+    
+  </header>
+  <main>
+    <section class="problem-hero" aria-labelledby="problem-hero-title">
+      <div class="problem-orbits" aria-hidden="true"><i></i><i></i><i></i><span>?</span></div>
+      <div class="problem-hero-copy"><span class="eyebrow">THE OPEN QUESTIONS · FRONTIER COLLECTION 02</span><h1 id="problem-hero-title">千禧年 /<br><span class="gradient-word">世界难题集</span><span class="problem-period">.</span></h1><p>从一个问题，走向知识的边界。<br>保留完整题述与研究指令，让每一次探索都有据可查。</p><div class="problem-hero-actions"><a href="#problem-library" class="button button-light">探索题目 <span aria-hidden="true">↓</span></a><button class="text-button" id="problem-how">怎么复制与评测 ↗</button></div></div>
+      <div class="problem-stats" id="problem-stats" aria-label="题库统计"></div>
+    </section>
+    <section class="problem-library" id="problem-library" aria-labelledby="problem-library-title">
+      <div class="problem-heading"><div><span class="eyebrow">QUESTIONS WORTH ASKING</span><h2 id="problem-library-title">把问题，完整地带走。</h2></div><p>复制内容 = <strong>表中 Prompt</strong> + <strong>原始题目</strong></p></div>
+      <div class="problem-toolbar"><div class="problem-controls"><label class="search-box"><span aria-hidden="true">⌕</span><input id="problem-search" type="search" placeholder="搜索题目、编号、概念或 Prompt…" aria-label="搜索世界难题" autocomplete="off"><kbd>/</kbd></label><div class="problem-control-end"><label class="select-wrap"><span>范围</span><select id="problem-scope" aria-label="题目范围"><option value="all">全部题目</option><option value="millennium">CMI 千禧年题</option></select></label><button id="problem-saved" class="problem-saved" aria-pressed="false">我的收藏 <b id="problem-saved-count">0</b></button></div></div><div id="problem-categories" class="categories" role="group" aria-label="学科分类"></div></div>
+      <div class="problem-result-bar"><p id="problem-results" aria-live="polite"></p><button id="problem-reset" hidden>清除筛选 ×</button></div>
+      <p class="problem-source-notice">题库 ≠ 已解决问题。仅来源标记为 CMI 的条目属于千禧年原题；其余为各领域研究挑战。状态与评价均来自上游数据快照。</p>
+      <div id="problem-grid" class="problem-grid"></div>
+      <div id="problem-empty" class="problem-empty" hidden><span aria-hidden="true">∅</span><h3>没有找到这个方向的题目</h3><p>试试换一个关键词，或清除学科与范围筛选。</p><button class="button button-light" id="problem-empty-reset">查看全部题目</button></div>
+      <div class="problem-more"><button id="problem-more" class="button button-outline">继续探索 ↓</button><p id="problem-progress"></p></div>
+    </section>
+    <section class="problem-guide" id="problem-guide" aria-labelledby="problem-guide-title"><span class="eyebrow">READ BEFORE YOU RUN</span><h2 id="problem-guide-title">不缩写题目，也不制造答案。</h2><div class="problem-guide-grid"><article><b>01 / 复制的是什么</b><p>Prompt 列原文在前，空一行后接完整“原始题目”列。无标题、评价或额外指令。公式保留原始 LaTeX；段落转换为换行，忽略空白排版段。</p></article><article><b>02 / 这是研究测试集</b><p>并非一道题就有唯一、现成的答案。详情保留来源表中的难度、可能的评测方案、GT 标注与验证，以及是否已被解决的说明。</p></article><article><b>03 / 把边界留在视野内</b><p>未执行任何 Prompt，也没有评判模型是否攻克。医学与生物题用于研究和评测，不替代临床判断、伦理审查或专业验证。</p></article></div><a class="button button-outline" href="data/problems.json?v=987c15e848b2" download="world-problems.json">下载完整题库 JSON ↓</a></section>
+  </main>
+  <footer class="site-footer"><div class="footer-brand">frontier <span>WORLD PROBLEMS / SOURCE FIRST</span></div><p id="problem-sync-footer"></p><a href="index.html">返回模型案例库 ↗</a></footer>
+  <dialog id="problem-dialog" class="problem-dialog" aria-labelledby="problem-dialog-title"><div class="problem-dialog-bar"><span class="eyebrow">QUESTION EXPLORER</span><div><button id="problem-prev" class="icon-button" aria-label="上一题">←</button><button id="problem-next" class="icon-button" aria-label="下一题">→</button><button id="problem-close" class="icon-button" aria-label="关闭题目">×</button></div></div><div id="problem-dialog-content"></div></dialog>
+  <div id="problem-toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">请启用 JavaScript 浏览题目。也可打开 data/problems.json 查阅完整数据。</p></noscript>
+</body>
+</html>

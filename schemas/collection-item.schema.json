@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/code-everything/code-everything/blob/main/schemas/collection-item.schema.json",
+  "title": "code-everything 子集合条目（通用）",
+  "description": "适用于 data/ 下除 cases.jsonl 外的子集合 JSONL：code2video / github-projects / goodcase / opus-video-prompts / astra-prompts / game-prompts / world-problems。各子集合保留各自的原始字段，本 schema 只约束跨集合统一的最低要求。",
+  "type": "object",
+  "required": ["id", "title", "author", "contentLicense", "licenseNote", "attribution"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "author": { "type": "string", "minLength": 1, "description": "原作者署名" },
+    "prompt": { "type": ["string", "null"], "description": "原始 Prompt（如有），忠实保留" },
+    "promptHash": { "type": ["string", "null"] },
+    "contentLicense": {
+      "type": "string",
+      "description": "本仓库对收录内容的默认许可姿态：CC-BY-NC-4.0；github-projects 条目另保留项目自身的 license 字段"
+    },
+    "licenseNote": { "type": "string" },
+    "attribution": {
+      "type": "object",
+      "required": ["creator", "sourceUrl"],
+      "properties": {
+        "creator": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "type": ["string", "null"], "format": "uri" }
+      }
+    }
+  },
+  "additionalProperties": true
+}

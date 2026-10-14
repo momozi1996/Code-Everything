@@ -1,0 +1,59 @@
+name: 提交新案例
+description: 推荐一个你在 X 上看到的优秀 code-gen 案例
+title: "[案例] "
+labels: ["new-case"]
+body:
+  - type: input
+    id: source_url
+    attributes:
+      label: 原帖链接（必填）
+      description: X / Twitter 原帖 URL，例如 https://x.com/xxx/status/xxx
+      placeholder: https://x.com/
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: 原作者（必填）
+      description: 昵称 + @handle，例如 宝玉 @dotey
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: 模型与版本
+      description: 例如 Claude Opus 5.5 / GPT-6 Astra
+      placeholder: Claude Opus 5.5
+  - type: textarea
+    id: prompt
+    attributes:
+      label: 原始 Prompt（如有）
+      description: 请逐字粘贴，不要改写。转写或节选请注明
+      render: text
+  - type: input
+    id: demo_url
+    attributes:
+      label: 在线 Demo 链接（如有）
+      placeholder: https://
+  - type: dropdown
+    id: category
+    attributes:
+      label: 产出类型
+      multiple: true
+      options:
+        - 游戏
+        - 网页
+        - 前端
+        - 3D
+        - 动画
+        - 生成艺术
+        - 可视化
+        - 工具
+        - 效率工作
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 该内容为原作者公开发布，且我提供的信息真实准确
+          required: true
