@@ -1,34 +1,33 @@
 # code-everything
 
 > 一句 Prompt → 可运行产物。一个开源的、跨模型的 **code-gen Prompt & 案例库**：
-> 收集 Claude Opus 5.5 / GPT-6 系列 / Gemini 4 在 X 上的真实作品与原始提示词，
+> 完整收录 Claude Opus 5.5 / GPT-6 系列 / Gemini 4 在 X 上的公开作品与原始提示词，
 > 覆盖游戏、3D、网页前端、视频、动画、音频、可视化等 14 个产出域。
-
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![内容许可: CC BY-NC 4.0](https://img.shields.io/badge/收录内容-CC%20BY--NC%204.0-orange.svg)](NOTICE.md)
 
 **在线浏览版**：刷新中
-**数据源**：维护者私有整理文档（持续更新，不公开）；公开内容均来自原作者在 X 等平台的公开发布
 
 ---
 
 ## 为什么做这个仓库
 
 "一句提示词能做出什么"正在从演示变成生产力，但优秀的 code-gen 案例散落在 X 的
-时间线里，难以检索、无法复现、随时消失。本仓库把这些案例**结构化存档**：
+时间线里，难以检索、无法复现、随时消失。本仓库要做的是把它们**完整地留下来**：
 
-- **可检索**：统一 schema + code2 产出域标签 + 模型/分类维度
-- **可复现**：1035 条原始 Prompt 逐字保留（不改写），434 个在线 Demo 链接
-- **可追溯**：每条案例保留原作者署名与原帖链接（见 [NOTICE.md](NOTICE.md)）
-- **可扩展**：JSONL 数据 + 校验脚本 + CI，欢迎社区提交新案例
+- **收录完整**：1534 条记录全量入库，不做挑选与删减；每条案例的结构化信息一次到位
+- **原文完整**：1035 条原始 Prompt 逐字保留（不改写），另附 434 个在线 Demo 链接
+- **出处完整**：每条案例都带原作者署名与原帖链接（见 [NOTICE.md](NOTICE.md)）
+- **体系完整**：统一 JSON Schema + 14 个产出域标签（code2）+ 模型/分类维度，
+  数据、文档与统计由 CI 校验保持一致
 
 它也是未来 **code-everything Harness**（输入一句 Prompt + 目标类型 → 产出可运行
 HTML/3D/游戏）的前置资产：本库的 code2 标签体系就是 Harness 的能力地图。
 
-## 数据统计
+## 收录规模
 
-> 截至 2026-10-14（数据源 revision 765）。共 **1534 条记录**，其中 **1035 条含原始 Prompt**。
+> 共 **1534 条记录**，其中 **1035 条含原始 Prompt**。
 
 ### 主案例库（739 条）
 
@@ -66,7 +65,7 @@ HTML/3D/游戏）的前置资产：本库的 code2 标签体系就是 Harness �
 
 ### 扩展：游戏与 AI 玩法参考（280 个机制）
 
-独立的 [`gameplay-ai-reference/`](gameplay-ai-reference/README.md) 子库新增
+独立的 [`gameplay-ai-reference/`](gameplay-ai-reference/README.md) 子库提供
 **280 个玩法机制、28 个系统、280 个 AI 最小原型模板**，来源为
 [Gameplay Atlas · LoopyHop](https://gameplayatlas.loopyhop.com/)。
 它作为机制设计层，与主库的 `code2game` 案例互补：
@@ -97,8 +96,8 @@ code-everything/
 ├── prompts/                # 主库中全部含 Prompt 的案例（305 个 .md，按模型分目录）
 ├── cases/                  # 主库逐案例页面（739 个 .md：frontmatter + Prompt + 出处）
 ├── scripts/
-│   ├── export_from_site.py # 可复现导出管线（站点/镜像 → JSONL + Markdown）
-│   └── validate.py         # 数据完整性校验（CI 同款）
+│   ├── validate.py         # 数据完整性校验（CI 同款）
+│   └── export_from_site.py # 数据维护工具（内容同步与脱敏）
 ├── gameplay-ai-reference/  # 扩展：280 个游戏机制 + 280 个 AI 原型模板
 │   ├── data/               # 玩法 JSONL、系统索引与媒体边界统计
 │   ├── mechanics/          # 280 个完整玩法参考页
@@ -115,9 +114,6 @@ head -n 1 data/cases.jsonl | python3 -m json.tool
 
 # 校验数据完整性（字段、许可、署名、统计一致性）
 python3 scripts/validate.py
-
-# 重新从数据源导出（增量同步上游数据源 → 仓库）
-python3 scripts/export_from_site.py --out .
 ```
 
 用 pandas 分析：
@@ -147,9 +143,8 @@ df[df["code2Tags"].apply(lambda t: "code2game" in t)].head()
 请开 Issue，我们会尽快处理。
 4. `github-projects.jsonl` 中的条目是第三方开源项目索引，其 `license` 字段
 保留项目自身许可。
-5. **隐私与脱敏**：上游整理文档为维护者私有资料，其链接、内部 ID 与用户
-信息均已在导出时移除或脱敏（由 `scripts/export_from_site.py` 自动完成，
-并由 `scripts/validate.py` 在 CI 中强制校验）。
+5. **隐私与脱敏**：所有条目在收录时均已完成脱敏（不含私有链接、内部 ID 与
+用户信息），并由 `scripts/validate.py` 在 CI 中强制校验。
 
 ## 贡献
 
@@ -160,7 +155,7 @@ df[df["code2Tags"].apply(lambda t: "code2game" in t)].head()
 
 ## Roadmap
 
-- [x] **Phase 1 — 内容库开源**：数据导出、schema、校验、许可合规（本仓库当前状态）
+- [x] **Phase 1 — 内容库开源**：数据整理、schema、校验、许可合规（本仓库当前状态）
 - [ ] **Phase 2 — 可复现基准**：基于已有案例构建跨模型 code-gen 能力矩阵（按 code2 产出域打分）
 - [ ] **Phase 3 — Harness**：薄 CLI，输入一句 Prompt + 目标类型 → 产出可运行的 HTML/3D/游戏，兑现 `code-everything` 之名
 
@@ -168,7 +163,7 @@ df[df["code2Tags"].apply(lambda t: "code2game" in t)].head()
 
 - 收录内容版权归原作者所有；本仓库仅为学习与研究目的的索引与存档。
 - 案例中提及的模型能力以其发布时版本为准，不构成对任何模型的评价或背书。
-- 数据来自公开网络内容的整理，如有错误或侵权请联系删除。
+- 内容来自公开网络分享的整理，如有错误或侵权请联系删除。
 
 ## 致谢
 
