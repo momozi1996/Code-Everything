@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/code-everything/code-everything/blob/main/gameplay-ai-reference/schemas/mechanic.schema.json",
+  "title": "游戏与 AI 玩法参考条目",
+  "type": "object",
+  "required": [
+    "id", "system", "systemZh", "name", "summary", "tags", "rules", "loop",
+    "prototype", "references", "sourceUrl", "contentLicense", "licenseNote",
+    "attribution", "mediaPolicy", "aiPrototypePrompt"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "system": { "type": "string", "minLength": 1 },
+    "systemZh": { "type": "string", "minLength": 1 },
+    "name": { "$ref": "#/$defs/localized" },
+    "summary": { "$ref": "#/$defs/localized" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "rules": { "$ref": "#/$defs/localized" },
+    "loop": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/localized" } },
+    "decisions": { "type": "array", "items": { "$ref": "#/$defs/localized" } },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "effect"],
+        "properties": {
+          "name": { "$ref": "#/$defs/localized" },
+          "effect": { "$ref": "#/$defs/localized" }
+        }
+      }
+    },
+    "prototype": {
+      "type": "object",
+      "required": ["firstStep", "test", "pitfall"],
+      "properties": {
+        "scope": { "type": ["string", "null"] },
+        "interaction": { "type": ["string", "null"] },
+        "firstStep": { "$ref": "#/$defs/localized" },
+        "test": { "$ref": "#/$defs/localized" },
+        "pitfall": { "$ref": "#/$defs/localized" }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["game", "source", "rights", "imageReference"],
+        "properties": {
+          "game": { "type": "string", "minLength": 1 },
+          "gameZh": { "type": ["string", "null"] },
+          "source": { "type": "string", "format": "uri" },
+          "sourceLabel": { "type": ["string", "null"] },
+          "rights": { "type": ["string", "null"] },
+          "verified": { "type": ["string", "null"] },
+          "imageReference": {
+            "type": "object",
+            "required": ["sourcePage", "mediaIncluded", "note"],
+            "properties": {
+              "sourcePage": { "type": ["string", "null"], "format": "uri" },
+              "kind": { "type": ["string", "null"] },
+              "observation": { "$ref": "#/$defs/localized" },
+              "mediaIncluded": { "const": false },
+              "note": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sourceUrl": {
+      "type": "string",
+      "pattern": "^https://gameplayatlas\\.loopyhop\\.com/mechanic/[a-z0-9-]+/$"
+    },
+    "contentLicense": { "type": "string" },
+    "licenseNote": { "type": "string" },
+    "attribution": {
+      "type": "object",
+      "required": ["creator", "sourceUrl", "upstream"],
+      "properties": {
+        "creator": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "upstream": { "type": "string", "format": "uri" }
+      }
+    },
+    "mediaPolicy": {
+      "type": "object",
+      "required": ["imagesIncluded", "directImageLinksIncluded", "note"],
+      "properties": {
+        "imagesIncluded": { "const": false },
+        "directImageLinksIncluded": { "const": false },
+        "note": { "type": "string" }
+      }
+    },
+    "aiPrototypePrompt": { "type": "string", "minLength": 100 },
+    "edition": { "type": ["integer", "null"] }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "localized": {
+      "type": ["object", "null"],
+      "properties": {
+        "zh": { "type": ["string", "null"] },
+        "en": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

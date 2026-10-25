@@ -1,0 +1,117 @@
+---
+id: projectiles-ballistic-arc
+title: "抬高准星，修正抛物线落点"
+system: projectiles
+source: https://gameplayatlas.loopyhop.com/mechanic/projectiles-ballistic-arc/
+contentLicense: CC-BY-NC-4.0
+imagesIncluded: false
+---
+
+# 抬高准星，修正抛物线落点 · Aim higher to correct a falling trajectory
+
+> 瞄准的是未来落点，发射方向不一定正对目标。
+
+- **系统**：射击与弹道（projectiles）
+- **标签**：precision, spatial, information
+- **出处**：[Gameplay Atlas](https://gameplayatlas.loopyhop.com/mechanic/projectiles-ballistic-arc/)
+
+## 基础规则
+
+投射物飞行需要时间，并会在途中下坠。玩家调整发射角度，先观察一次落点，再修正高低和提前量；目标移动或距离变化后，原来的瞄法需要重新估计。
+
+## 核心循环
+
+1. 估计距离和移动方向
+2. 抬高或提前瞄准
+3. 观察飞行与落点
+4. 按偏差修正下一发
+
+## 关键取舍
+
+- 直接低角度出手更快，高角度能越过障碍但飞得更久。
+- 先打一发校准，还是为节省弹药靠近后再射？
+
+## 可调参数
+
+- **飞行速度与下坠**：下坠明显会强化距离判断；速度过慢则会让移动目标难以预测。
+- **轨迹预览长度**：完整预览降低计算负担；只显示前段会保留远处落点的试探。
+
+## 最小原型
+
+- **第一步**：先做二维固定发射点、一道墙和三个距离不同的靶子，可重看上一条轨迹。
+- **验证**：玩家是否能根据上一次落点，有方向地修正下一次投射？
+- **避免**：镜头视角和发射点偏移容易造成准星与实际轨迹不一致。
+
+## AI 原型任务模板
+
+```text
+你是一名资深游戏原型工程师。请用原创代码与原创占位素材，实现一个可玩的最小原型，验证以下机制。不要复制任何现有游戏的名称、角色、世界观、地图、界面布局、数值表、美术、音频或代码。
+
+## 机制
+抬高准星，修正抛物线落点（Aim higher to correct a falling trajectory）
+
+## 设计目标
+瞄准的是未来落点，发射方向不一定正对目标。
+
+## 基础规则
+投射物飞行需要时间，并会在途中下坠。玩家调整发射角度，先观察一次落点，再修正高低和提前量；目标移动或距离变化后，原来的瞄法需要重新估计。
+
+## 核心循环
+1. 估计距离和移动方向
+2. 抬高或提前瞄准
+3. 观察飞行与落点
+4. 按偏差修正下一发
+
+## 关键取舍
+- 直接低角度出手更快，高角度能越过障碍但飞得更久。
+- 先打一发校准，还是为节省弹药靠近后再射？
+
+## 可调参数
+- 飞行速度与下坠：下坠明显会强化距离判断；速度过慢则会让移动目标难以预测。
+- 轨迹预览长度：完整预览降低计算负担；只显示前段会保留远处落点的试探。
+
+## 最小实现建议
+先做二维固定发射点、一道墙和三个距离不同的靶子，可重看上一条轨迹。
+
+## 验证方式
+玩家是否能根据上一次落点，有方向地修正下一次投射？
+
+## 需要避免
+镜头视角和发射点偏移容易造成准星与实际轨迹不一致。
+
+## 交付要求
+1. 先完成可验证的机制闭环，再考虑表现层；范围控制在单局 3–5 分钟。
+2. 所有素材必须原创、程序化生成或使用明确的占位符，不使用第三方游戏资产。
+3. 提供运行方式、操作说明、关键参数和验证结果。
+4. 如果表现与机制验证冲突，优先保留机制，不增加无关系统。
+```
+
+## 实现参考与画面出处
+
+> 这里只列出来源页和权利人。图片未收录，也不提供图片直链；请在原页面查看。
+
+### 盗贼之海（Sea of Thieves）
+
+- 机制来源：[Official support — Rare](https://support.seaofthieves.com/articles/13407523184402-Aim-Assist-Audio-An-audio-guide-to-help-visually-impaired-players-target-other-players-and-AI-when-using-guns-and-cannons-)
+- 画面来源页：https://store.steampowered.com/app/1172620/
+- 权利人：Rare Ltd / Xbox Game Studios
+- 核验日期：2026-10-21
+
+### 英灵神殿（Valheim）
+
+- 机制来源：[Community wiki — game rules](https://valheim.fandom.com/wiki/Arbalest)
+- 画面来源页：https://store.steampowered.com/app/892970/
+- 权利人：Iron Gate AB / Coffee Stain Publishing
+- 核验日期：2026-10-21
+
+## 对比观察
+
+盗贼之海的炮击还发生在移动舰船上；Valheim 的弓箭让角色自己选择射击距离和站位。
+
+## 组合灵感
+
+组合提案：用抛物线投球点亮接收器，有些必须越过墙顶，有些只能从侧面进入；玩家通过试投修正角度。
+
+---
+
+原始整理：Gameplay Atlas · LoopyHop。AI 模板为本仓库生成的研究辅助文本。

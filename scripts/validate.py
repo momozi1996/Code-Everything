@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -52,7 +53,8 @@ INTERNAL_ID_PATTERN = re.compile(r"(?<![A-Za-z0-9])(?:ou|oc|on)_[A-Za-z0-9]{10,}
 # 仓库自有文稿中绝不允许出现的字眼（第三方原文内容不在此列）
 BANNED_WORDS_IN_DOCS = ["爬虫", "爬取", "抓取", "飞书", "feishu"]
 BANNED_WORDS_IN_SCRIPTS = ["爬虫", "爬取", "抓取"]
-DOC_FILES = ["README.md", "NOTICE.md", "CONTRIBUTING.md", "website/README.md"]
+DOC_FILES = ["README.md", "NOTICE.md", "CONTRIBUTING.md", "website/README.md",
+             "gameplay-ai-reference/README.md", "gameplay-ai-reference/INDEX.md"]
 
 
 def check_compliance_data(obj, where: str):
@@ -201,6 +203,18 @@ def main() -> int:
         want_prompt = {c["id"] for c in items if c.get("prompt")}
         if want_prompt - prompt_md:
             err(f"prompts/ 缺少 {len(want_prompt - prompt_md)} 个页面，例如：{sorted(want_prompt - prompt_md)[:3]}")
+
+    # 独立扩展子库：玩法数据、AI 模板与媒体边界
+    gameplay_validator = ROOT / "gameplay-ai-reference" / "scripts" / "validate.py"
+    if gameplay_validator.exists():
+        result = subprocess.run(
+            [sys.executable, str(gameplay_validator)],
+            capture_output=True, text=True, cwd=ROOT,
+        )
+        if result.stdout:
+            print(result.stdout.rstrip())
+        if result.returncode != 0:
+            err("gameplay-ai-reference 子库校验未通过")
 
     for w in warnings:
         print(f"[warn] {w}")

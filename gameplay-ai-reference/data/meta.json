@@ -1,0 +1,180 @@
+{
+  "title": "游戏与 AI 玩法参考",
+  "upstream": "https://gameplayatlas.loopyhop.com/",
+  "sourceSnapshot": "2026-10-25",
+  "mechanicCount": 280,
+  "systemCount": 28,
+  "imagesIncluded": 0,
+  "directImageLinksIncluded": 0,
+  "mediaPolicy": "不收录图片文件、图片直链或热链。画面来源页仅用于前往原站查看；这不构成对图片再利用的授权。",
+  "systems": [
+    {
+      "id": "allocation",
+      "nameZh": "分配与调度",
+      "count": 8,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=allocation"
+    },
+    {
+      "id": "automation",
+      "nameZh": "自动化与物流",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=automation"
+    },
+    {
+      "id": "building",
+      "nameZh": "建造与空间",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=building"
+    },
+    {
+      "id": "combat",
+      "nameZh": "战斗与战术",
+      "count": 18,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=combat"
+    },
+    {
+      "id": "command",
+      "nameZh": "指挥与单位",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=command"
+    },
+    {
+      "id": "commerce",
+      "nameZh": "商业与交易",
+      "count": 11,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=commerce"
+    },
+    {
+      "id": "cooking",
+      "nameZh": "烹饪与食物",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=cooking"
+    },
+    {
+      "id": "cooperation",
+      "nameZh": "合作与分工",
+      "count": 9,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=cooperation"
+    },
+    {
+      "id": "deckbuilding",
+      "nameZh": "卡组构筑",
+      "count": 12,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=deckbuilding"
+    },
+    {
+      "id": "defense",
+      "nameZh": "防御与阵地",
+      "count": 9,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=defense"
+    },
+    {
+      "id": "driving",
+      "nameZh": "驾驶与竞速",
+      "count": 5,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=driving"
+    },
+    {
+      "id": "ecology",
+      "nameZh": "生态与系统",
+      "count": 8,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=ecology"
+    },
+    {
+      "id": "exploration",
+      "nameZh": "探索与路线",
+      "count": 4,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=exploration"
+    },
+    {
+      "id": "farming",
+      "nameZh": "种植与经营",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=farming"
+    },
+    {
+      "id": "fishing",
+      "nameZh": "钓鱼与捕捉",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=fishing"
+    },
+    {
+      "id": "gathering",
+      "nameZh": "采集与挖掘",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=gathering"
+    },
+    {
+      "id": "incremental",
+      "nameZh": "放置与增量",
+      "count": 11,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=incremental"
+    },
+    {
+      "id": "inventory",
+      "nameZh": "背包与资源",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=inventory"
+    },
+    {
+      "id": "matching",
+      "nameZh": "匹配与消除",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=matching"
+    },
+    {
+      "id": "movement",
+      "nameZh": "移动与操控",
+      "count": 15,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=movement"
+    },
+    {
+      "id": "narrative",
+      "nameZh": "叙事与选择",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=narrative"
+    },
+    {
+      "id": "progression",
+      "nameZh": "成长与解锁",
+      "count": 12,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=progression"
+    },
+    {
+      "id": "projectiles",
+      "nameZh": "射击与弹道",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=projectiles"
+    },
+    {
+      "id": "puzzles",
+      "nameZh": "解谜与推理",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=puzzles"
+    },
+    {
+      "id": "relationships",
+      "nameZh": "社交与关系",
+      "count": 10,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=relationships"
+    },
+    {
+      "id": "rhythm",
+      "nameZh": "节奏与节拍",
+      "count": 5,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=rhythm"
+    },
+    {
+      "id": "stealth",
+      "nameZh": "潜行与警戒",
+      "count": 11,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=stealth"
+    },
+    {
+      "id": "survival",
+      "nameZh": "生存与压力",
+      "count": 12,
+      "sourceUrl": "https://gameplayatlas.loopyhop.com/?system=survival"
+    }
+  ]
+}

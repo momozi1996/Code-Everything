@@ -64,6 +64,20 @@ HTML/3D/游戏）的前置资产：本库的 code2 标签体系就是 Harness �
 | GoodCase 广场 | `data/goodcase.jsonl` | 45 | goodcase.ai 社区精选 |
 | 完整 GitHub 项目 | `data/github-projects.jsonl` | 11 | 可直接运行的完整源码项目索引 |
 
+### 扩展：游戏与 AI 玩法参考（280 个机制）
+
+独立的 [`gameplay-ai-reference/`](gameplay-ai-reference/README.md) 子库新增
+**280 个玩法机制、28 个系统、280 个 AI 最小原型模板**，来源为
+[Gameplay Atlas · LoopyHop](https://gameplayatlas.loopyhop.com/)。
+它作为机制设计层，与主库的 `code2game` 案例互补：
+
+- [玩法总索引](gameplay-ai-reference/INDEX.md)：按系统浏览全部机制；
+- `gameplay-ai-reference/prompts/`：可直接用于原创最小原型的任务模板；
+- `gameplay-ai-reference/data/mechanics.jsonl`：结构化数据与组合关系；
+- 媒体边界：**图片文件 0、图片直链 0、热链展示 0**，仅保留画面来源页与权利人。
+
+该扩展独立统计，不计入上述 1534 条主数据记录。
+
 ## 仓库结构
 
 ```javascript
@@ -85,6 +99,11 @@ code-everything/
 ├── scripts/
 │   ├── export_from_site.py # 可复现导出管线（站点/镜像 → JSONL + Markdown）
 │   └── validate.py         # 数据完整性校验（CI 同款）
+├── gameplay-ai-reference/  # 扩展：280 个游戏机制 + 280 个 AI 原型模板
+│   ├── data/               # 玩法 JSONL、系统索引与媒体边界统计
+│   ├── mechanics/          # 280 个完整玩法参考页
+│   ├── prompts/            # 按 28 个系统分目录的 AI 原型模板
+│   └── schemas/            # 玩法条目 schema
 └── website/                # 浏览版站点的完整源码（静态站点，可自托管）
 ```
 

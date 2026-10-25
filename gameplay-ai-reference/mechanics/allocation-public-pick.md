@@ -1,0 +1,117 @@
+---
+id: allocation-public-pick
+title: "按顺序从公共池选走一个"
+system: allocation
+source: https://gameplayatlas.loopyhop.com/mechanic/allocation-public-pick/
+contentLicense: CC-BY-NC-4.0
+imagesIncluded: false
+---
+
+# 按顺序从公共池选走一个 · Take one option from a shared pool
+
+> 自己拿走的东西，也会从别人的选择里消失。
+
+- **系统**：分配与调度（allocation）
+- **标签**：planning, information
+- **出处**：[Gameplay Atlas](https://gameplayatlas.loopyhop.com/mechanic/allocation-public-pick/)
+
+## 基础规则
+
+所有人面对同一批公开物品，轮到自己时选走一个，再从剩下的内容继续选择。玩家既考虑自身需要，也观察别人最缺什么；先选的优势、后选时的剩余物与补货时机共同改变价值。
+
+## 核心循环
+
+1. 查看公共选项
+2. 比较自己与他人的需要
+3. 选走一个并更新余量
+4. 根据剩余内容调整计划
+
+## 关键取舍
+
+- 先拿最适合自己的，还是先拿对手只差的那一件？
+- 某个普通选项很多，是否可以留到下一次再拿？
+
+## 可调参数
+
+- **补货频率**：每人选择后立即补货减弱抢夺，整轮结束才补货强化先后顺序。
+- **选择约束**：放置或使用条件会让同一件物品对不同玩家价值不同。
+
+## 最小原型
+
+- **第一步**：用三名本地玩家、六张公开牌与两个不同收集目标做一轮轮选。
+- **验证**：玩家是否会查看别人的需求，并因此改变自己的选择？
+- **避免**：不要让所有玩家永远按同一张强度表拿牌。
+
+## AI 原型任务模板
+
+```text
+你是一名资深游戏原型工程师。请用原创代码与原创占位素材，实现一个可玩的最小原型，验证以下机制。不要复制任何现有游戏的名称、角色、世界观、地图、界面布局、数值表、美术、音频或代码。
+
+## 机制
+按顺序从公共池选走一个（Take one option from a shared pool）
+
+## 设计目标
+自己拿走的东西，也会从别人的选择里消失。
+
+## 基础规则
+所有人面对同一批公开物品，轮到自己时选走一个，再从剩下的内容继续选择。玩家既考虑自身需要，也观察别人最缺什么；先选的优势、后选时的剩余物与补货时机共同改变价值。
+
+## 核心循环
+1. 查看公共选项
+2. 比较自己与他人的需要
+3. 选走一个并更新余量
+4. 根据剩余内容调整计划
+
+## 关键取舍
+- 先拿最适合自己的，还是先拿对手只差的那一件？
+- 某个普通选项很多，是否可以留到下一次再拿？
+
+## 可调参数
+- 补货频率：每人选择后立即补货减弱抢夺，整轮结束才补货强化先后顺序。
+- 选择约束：放置或使用条件会让同一件物品对不同玩家价值不同。
+
+## 最小实现建议
+用三名本地玩家、六张公开牌与两个不同收集目标做一轮轮选。
+
+## 验证方式
+玩家是否会查看别人的需求，并因此改变自己的选择？
+
+## 需要避免
+不要让所有玩家永远按同一张强度表拿牌。
+
+## 交付要求
+1. 先完成可验证的机制闭环，再考虑表现层；范围控制在单局 3–5 分钟。
+2. 所有素材必须原创、程序化生成或使用明确的占位符，不使用第三方游戏资产。
+3. 提供运行方式、操作说明、关键参数和验证结果。
+4. 如果表现与机制验证冲突，优先保留机制，不增加无关系统。
+```
+
+## 实现参考与画面出处
+
+> 这里只列出来源页和权利人。图片未收录，也不提供图片直链；请在原页面查看。
+
+### 璀璨玻璃（Sagrada）
+
+- 机制来源：[Official rulebook — Floodgate Games](https://floodgategames.com/Sagrada/Sagrada-Rules-Floodgate-Games-SA01.pdf)
+- 画面来源页：https://store.steampowered.com/app/965590/Sagrada/
+- 权利人：Dire Wolf Digital / Floodgate Games
+- 核验日期：2026-10-21
+
+### 云顶之弈（Teamfight Tactics）
+
+- 机制来源：[Official developer design article — Riot Games](https://teamfighttactics.leagueoflegends.com/en-au/news/dev/dev-design-pillars-of-tft/)
+- 画面来源页：https://teamfighttactics.leagueoflegends.com/en-au/news/dev/dev-design-pillars-of-tft/
+- 权利人：Riot Games
+- 核验日期：2026-10-21
+
+## 对比观察
+
+璀璨玻璃是逐个回合选骰并立即放置；云顶之弈的共享选秀按释放顺序竞争，价值还包含英雄与装备的组合。
+
+## 组合灵感
+
+组合提案：战斗奖励改为全队公开轮选，选到的牌进入个人牌组；需要提前判断队友会拿走哪张，保留第二方案。
+
+---
+
+原始整理：Gameplay Atlas · LoopyHop。AI 模板为本仓库生成的研究辅助文本。
