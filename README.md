@@ -4,11 +4,11 @@
 > 收集 Claude Opus 5.5 / GPT-6 系列 / Gemini 4 在 X 上的真实作品与原始提示词，
 > 覆盖游戏、3D、网页前端、视频、动画、音频、可视化等 14 个产出域。
 
-[![数据校验](https://github.com/code-everything/code-everything/actions/workflows/validate.yml/badge.svg)](https://github.com/code-everything/code-everything/actions/workflows/validate.yml)
+
 [![License: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![内容许可: CC BY-NC 4.0](https://img.shields.io/badge/收录内容-CC%20BY--NC%204.0-orange.svg)](NOTICE.md)
 
-**在线浏览版**：<https://bright-harbor-3f6b.page.stepcloud.com/index.html?scope=all>
+**在线浏览版**：刷新中
 **数据源**：维护者私有整理文档（持续更新，不公开）；公开内容均来自原作者在 X 等平台的公开发布
 
 ---
